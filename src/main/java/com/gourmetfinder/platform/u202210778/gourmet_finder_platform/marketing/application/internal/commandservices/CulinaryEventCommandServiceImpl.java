@@ -3,6 +3,7 @@ package com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.aggregates.CulinaryEvent;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.commands.CreateCulinaryEventCommand;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.commands.DeleteCulinaryEventCommand;
+import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.entities.Client;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.services.CulinaryEventCommandService;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.infrastructure.persistence.jpa.respositories.CulinaryEventRepository;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class CulinaryEventCommandServiceImpl implements CulinaryEventCommandServ
         if (culinaryEventRepository.existsByOrganizerIdAndEventDate(command.organizerId(), command.eventDate())) {
             throw new RuntimeException("Event already exists by organizer on the same day");
         }
-        var event = new CulinaryEvent(command.eventName(), command.cuisineType(), command.organizerId(), command.location(), command.eventDate(), command.maxParticipants());
+        var event = new CulinaryEvent(new Client(command.clientId()), command.eventName(), command.cuisineType(), command.organizerId(), command.location(), command.eventDate(), command.maxParticipants());
         try {
             culinaryEventRepository.save(event);
         } catch (Exception e) {

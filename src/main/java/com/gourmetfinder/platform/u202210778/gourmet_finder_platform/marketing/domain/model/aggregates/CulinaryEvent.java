@@ -1,6 +1,6 @@
 package com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.aggregates;
 
-import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.entities.Reservation;
+import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.entities.Client;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -9,9 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Represents a culinary event.
@@ -28,8 +26,9 @@ public class CulinaryEvent extends AuditableAbstractAggregateRoot<CulinaryEvent>
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-    private List<Reservation> reservations;
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     @NotBlank
     private String eventName;
@@ -52,7 +51,8 @@ public class CulinaryEvent extends AuditableAbstractAggregateRoot<CulinaryEvent>
     @Min(1)
     private Integer maxParticipants;
 
-    public CulinaryEvent(String eventName, String cuisineType, Long organizerId, String location, Date eventDate, Integer maxParticipants) {
+    public CulinaryEvent(Client client, String eventName, String cuisineType, Long organizerId, String location, Date eventDate, Integer maxParticipants) {
+        this.client=client;
         this.eventName = eventName;
         this.cuisineType = cuisineType;
         this.organizerId = organizerId;

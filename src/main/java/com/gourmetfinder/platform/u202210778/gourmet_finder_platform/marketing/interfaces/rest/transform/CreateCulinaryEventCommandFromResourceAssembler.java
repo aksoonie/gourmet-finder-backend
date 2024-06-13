@@ -25,6 +25,6 @@ public class CreateCulinaryEventCommandFromResourceAssembler {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return new CreateCulinaryEventCommand(resource.eventName(), resource.cuisineType(), resource.organizerId(), resource.location(), eventDate, resource.maxParticipants());
+        return new CreateCulinaryEventCommand(resource.client(), resource.eventName(), resource.cuisineType(), resource.organizerId(), resource.location(), eventDate, resource.maxParticipants());
     }
 }

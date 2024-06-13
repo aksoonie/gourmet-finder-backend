@@ -17,7 +17,6 @@ public class CulinaryEventResourceFromEntityAssembler {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String eventDateAsString = formatter.format(entity.getEventDate());
 
-        return new CulinaryEventResource(entity.getId(), entity.getEventName(), entity.getCuisineType(), entity.getOrganizerId(), entity.getLocation(), eventDateAsString, entity.getMaxParticipants());
+        return new CulinaryEventResource(entity.getClient().getId(), entity.getId(), entity.getEventName(), entity.getCuisineType(), entity.getOrganizerId(), entity.getLocation(), eventDateAsString, entity.getMaxParticipants());
     }
-
 }
