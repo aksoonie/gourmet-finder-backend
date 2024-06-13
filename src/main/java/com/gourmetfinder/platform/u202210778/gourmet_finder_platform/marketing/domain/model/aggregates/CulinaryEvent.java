@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class CulinaryEvent extends AuditableAbstractAggregateRoot<CulinaryEvent>
     private Long organizerId;
 
     @NotBlank
+    @Size(max = 15, message = "The location must be a maximum of 15 characters")
     private String location;
 
     @NotNull
