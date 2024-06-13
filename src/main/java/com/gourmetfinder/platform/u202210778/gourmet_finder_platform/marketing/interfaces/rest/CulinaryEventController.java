@@ -1,5 +1,6 @@
 package com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.interfaces.rest;
 
+import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.commands.DeleteCulinaryEventCommand;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.queries.GetAllCulinaryEventsQuery;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.queries.GetCulinaryEventByIdQuery;
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.services.CulinaryEventCommandService;
@@ -27,6 +28,12 @@ public class CulinaryEventController {
         this.culinaryEventQueryService = culinaryEventQueryService;
     }
     //POST
+    /**
+     * Crea un evento culinario
+     * @param createCulinaryEventResource CreateCulinaryEventResource
+     * @return CulinaryEventResource con el evento culinario creado y el status HTTP CREATED
+     * @author Jimena Cama
+     */
     @PostMapping
     public ResponseEntity<CulinaryEventResource> createCulinaryEvent(@RequestBody CreateCulinaryEventResource createCulinaryEventResource) {
         var createCulinaryEventCommand = CreateCulinaryEventCommandFromResourceAssembler.toCommandFromResource(createCulinaryEventResource);
@@ -59,6 +66,12 @@ public class CulinaryEventController {
         var culinaryEvents = culinaryEventQueryService.handle(getAllCulinaryEventsQuery);
         var culinaryEventResources = culinaryEvents.stream().map(CulinaryEventResourceFromEntityAssembler::toResourceFromEntity).toList();
         return ResponseEntity.ok(culinaryEventResources);
+    }
+    @DeleteMapping({"/{culinaryEventId}"})
+    public ResponseEntity<?> deleteCulinaryEvent(@PathVariable Long culinaryEventId){
+        var deleteCulinaryEventCommand = new DeleteCulinaryEventCommand(culinaryEventId);
+        culinaryEventCommandService.handle(deleteCulinaryEventCommand);
+        return ResponseEntity.ok("Culinary Event Deleted Successfully!");
     }
 
 

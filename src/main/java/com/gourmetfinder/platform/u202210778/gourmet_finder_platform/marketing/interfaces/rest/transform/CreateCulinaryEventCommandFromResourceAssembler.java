@@ -11,6 +11,12 @@ import java.util.Date;
 
 
 public class CreateCulinaryEventCommandFromResourceAssembler {
+    /**
+     * Converts a CreateCulinaryEventResource to a CreateCulinaryEventCommand
+     * @param resource CreateCulinaryEventResource
+     * @return CreateCulinaryEventCommand
+     * @author Jimena Cama - U202210778
+     */
     public static CreateCulinaryEventCommand toCommandFromResource(CreateCulinaryEventResource resource) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date eventDate = null;

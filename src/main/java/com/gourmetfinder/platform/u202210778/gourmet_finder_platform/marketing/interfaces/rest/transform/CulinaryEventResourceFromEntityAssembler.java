@@ -7,6 +7,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CulinaryEventResourceFromEntityAssembler {
+    /**
+     * Converts a CulinaryEvent entity to a CulinaryEventResource
+     * @param entity CulinaryEvent entity
+     * @return CulinaryEventResource
+     * @author Jimena Cama - U202210778
+     */
     public static CulinaryEventResource toResourceFromEntity(CulinaryEvent entity){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String eventDateAsString = formatter.format(entity.getEventDate());

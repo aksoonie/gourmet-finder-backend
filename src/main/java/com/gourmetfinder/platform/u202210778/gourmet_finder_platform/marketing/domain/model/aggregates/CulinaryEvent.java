@@ -1,6 +1,7 @@
 package com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.aggregates;
 
 import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.marketing.domain.model.entities.Reservation;
+import com.gourmetfinder.platform.u202210778.gourmet_finder_platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,11 +16,13 @@ import java.util.List;
  * Represents a culinary event.
  * The culinary event is an entity that represents
  * a culinary event that can be organized by a user
+ * un culinary event puede tener muchos @param reservations
+ * por ello la relacion de uno a muchos
  * @author Jimena Cama
 */
 @Getter
 @Entity
-public class CulinaryEvent {
+public class CulinaryEvent extends AuditableAbstractAggregateRoot<CulinaryEvent> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

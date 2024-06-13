@@ -13,6 +13,16 @@ public class CulinaryEventCommandServiceImpl implements CulinaryEventCommandServ
     CulinaryEventCommandServiceImpl(CulinaryEventRepository culinaryEventRepository) {
         this.culinaryEventRepository = culinaryEventRepository;
     }
+
+    /**
+     * Create a new CulinaryEvent
+     * @param command the command to create a new CulinaryEvent
+     * @throws RuntimeException si un evento ya existente por nombre, tipo de cocina y ubicación
+     * @throws RuntimeException si un evento ya existe por organizador en el mismo día
+     * @throws IllegalArgumentException si hay un error al guardar el evento
+     * @return the id of the created event
+     * @author Jimena Cama - U202210778
+     */
     @Override
     public Long handle(CreateCulinaryEventCommand command) {
         if (culinaryEventRepository.existsByEventNameAndCuisineTypeAndLocation(command.eventName(), command.cuisineType(), command.location())) {
@@ -30,6 +40,13 @@ public class CulinaryEventCommandServiceImpl implements CulinaryEventCommandServ
         return event.getId();
     }
 
+    /**
+     * Delete a CulinaryEvent
+     * @param command the command to delete a CulinaryEvent
+     * @throws IllegalArgumentException si el evento no existe
+     * @throws IllegalArgumentException si hay un error al eliminar el evento
+     * @author Jimena Cama - U202210778
+     */
     @Override
     public void handle(DeleteCulinaryEventCommand command) {
         if (!culinaryEventRepository.existsById(command.id())) {
