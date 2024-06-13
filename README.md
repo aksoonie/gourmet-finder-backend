@@ -28,7 +28,7 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 server.port: 8090
 
-## En pom.xml
+## En pom.xml (para snake case)
 <!--para snake case-->
 		<dependency>
 			<groupId>io.github.encryptorcode</groupId>
@@ -36,7 +36,7 @@ server.port: 8090
 			<version>1.0.0</version>
 		</dependency>
 
-  # Estructura de archivos
+# Estructura de archivos
 ![image](https://github.com/aksoonie/gourmet-finder-backend/assets/134560396/04ba3b29-42c5-4a42-b6d6-bbb7691b2924)
 ![image](https://github.com/aksoonie/gourmet-finder-backend/assets/134560396/c81f8894-2fed-464f-a0d7-98c44e4d4385)
 
