@@ -58,4 +58,10 @@ A continuación se ofrece una tabla con las etiquetas principales que se usan en
 A continuación se presenta un ejemplo que muestra cómo se indican, en los comentarios de una clase, la descripción, el autor, la versión y la fecha.
 
 Ejemplo:
+/**
+* Frase corta descriptiva
+* Descripción de la clase
+* @author Nombre Apellido / Empresa
+* @version 0.1, 2004/05/30
+*/
   
