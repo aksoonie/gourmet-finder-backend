@@ -1,8 +1,8 @@
 # Importantes
 ## Application properties
 
-<!-- link del swagger ui
-http://localhost:8090/swagger-ui/index.html -->
+<link del swagger ui
+http://localhost:8090/swagger-ui/index.html>
 
 spring.application.name=gourmet-finder-platform
 
