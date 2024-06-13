@@ -40,4 +40,22 @@ server.port: 8090
 ![image](https://github.com/aksoonie/gourmet-finder-backend/assets/134560396/04ba3b29-42c5-4a42-b6d6-bbb7691b2924)
 ![image](https://github.com/aksoonie/gourmet-finder-backend/assets/134560396/c81f8894-2fed-464f-a0d7-98c44e4d4385)
 
+# Java docs
+A continuación se ofrece una tabla con las etiquetas principales que se usan en JAVADOC con su descripción funcional:
+
+| Etiqueta | Descripción |
+| --- | --- |
+| @author | Autor del elemento a documentar |
+| @version | Versión del elemento de la clase |
+| @return | Indica los parámetros de salida |
+| @exception | Indica la excepción que puede generar |
+| @param | Código para documentar cada uno de los parámetros |
+| @see | Una referencia a otra clase o utilidad |
+| @deprecated | El método ha sido reemplazado por otro |
+
+### Comentarios de clases
+
+A continuación se presenta un ejemplo que muestra cómo se indican, en los comentarios de una clase, la descripción, el autor, la versión y la fecha.
+
+Ejemplo:
   
