@@ -15,8 +15,7 @@ import java.util.Date;
  * Represents a culinary event.
  * The culinary event is an entity that represents
  * a culinary event that can be organized by a user
- * un culinary event puede tener muchos @param reservations
- * por ello la relacion de uno a muchos
+ * a client can have multiple culinary events
  * @author Jimena Cama
 */
 @Getter

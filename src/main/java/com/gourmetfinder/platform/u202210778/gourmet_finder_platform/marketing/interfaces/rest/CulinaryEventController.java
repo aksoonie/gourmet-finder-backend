@@ -31,7 +31,7 @@ public class CulinaryEventController {
     /**
      * Crea un evento culinario
      * @param createCulinaryEventResource CreateCulinaryEventResource
-     * @return CulinaryEventResource con el evento culinario creado y el status HTTP CREATED
+     * @return CulinaryEventResource and the status HTTP CREATED
      * @author Jimena Cama
      */
     @PostMapping

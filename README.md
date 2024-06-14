@@ -1,10 +1,6 @@
 # Gourmet Finder Platform
-
-# Summary
-Gourmet finder es un desarrollo ilustrado con JAVA,
-Spring Boot Framework, y Spring Data JPA en una base de datos PostgreSql.
-También implementa la configuración de documentación open-api e integración con Swagger UI.
-
+## Summary
+Gourmet Finder is a development illustrated with JAVA, Spring Boot Framework, and Spring Data JPA on a PostgreSQL database. It also implements open-api documentation configuration and integration with Swagger UI.  
 ## Features
 - RESTful API
 - OpenAPI Documentation
@@ -14,21 +10,13 @@ También implementa la configuración de documentación open-api e integración 
 - Validation
 - PostgreSQL Database
 - Domain-Driven Design
+- Bounded Contexts
 
-# Bounded Contexts
-Esta version de Gourmet Finder Platform tiene un bouneded context,
-el cual se encarga de gestionar la creación de evetnos,
-por tanto su nombre es "marketing".
-
+This version of Gourmet Finder Platform has a bounded context, which is responsible for managing the creation of events, hence its name is "marketing".  
 ## Marketing Context
-El Marketing Context es responsable de gestionar los eventos de la plataforma.
-Incluye las siguientes características:
-- Crear un evento que cumpla con las condiciones de la plataforma,
-por ejemplo, un evento con el mismo nombre, locación y tipo de cocina que uno ya existente
-no puede ser creado.
-- Un evento organizado por el mismo organizador en el mismo día, no puede ser creado.
+The Marketing Context is responsible for managing the events of the platform. It includes the following features:  
+- Create an event that meets the conditions of the platform, for example, an event with the same name, location, and type of cuisine as an existing one cannot be created.
+- An event organized by the same organizer on the same day cannot be created.
+This context also includes messages indicating the creation of an event, and if applicable, the reason why it was not possible to create it.  
 
-Este contexto incluye también mensajes que indican la creación de un evento,
-y si fuera el caso, la razón por la cuál no fue posible crearlo.
-
-Usar este URL http://localhost:8090/swagger-ui/index.html para ejecutar el API.
+Use this URL http://localhost:8090/swagger-ui/index.html to run the API.

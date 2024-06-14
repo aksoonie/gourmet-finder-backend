@@ -18,9 +18,9 @@ public class CulinaryEventCommandServiceImpl implements CulinaryEventCommandServ
     /**
      * Create a new CulinaryEvent
      * @param command the command to create a new CulinaryEvent
-     * @throws RuntimeException si un evento ya existente por nombre, tipo de cocina y ubicación
-     * @throws RuntimeException si un evento ya existe por organizador en el mismo día
-     * @throws IllegalArgumentException si hay un error al guardar el evento
+     * @throws RuntimeException if an event already exists by name, cuisine type and location
+     * @throws RuntimeException if an event already exists by organizer on the same day
+     * @throws IllegalArgumentException if there is an error while saving the event
      * @return the id of the created event
      * @author Jimena Cama - U202210778
      */
@@ -44,8 +44,8 @@ public class CulinaryEventCommandServiceImpl implements CulinaryEventCommandServ
     /**
      * Delete a CulinaryEvent
      * @param command the command to delete a CulinaryEvent
-     * @throws IllegalArgumentException si el evento no existe
-     * @throws IllegalArgumentException si hay un error al eliminar el evento
+     * @throws IllegalArgumentException if the event does not exist
+     * @throws IllegalArgumentException if there is an error while deleting the event
      * @author Jimena Cama - U202210778
      */
     @Override
